@@ -29,6 +29,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)ToSpeckle\Properties\PropertySetDefinitionHandler.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ToSpeckle\Properties\PropertySetExtractor.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ToSpeckle\Properties\PartDataExtractor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ToSpeckle\Properties\ObjectTypeExtractor.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ToSpeckle\Raw\AlignmentSubentitySpiralToSpeckleRawConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ToSpeckle\Raw\AlignmentSubentityArcToSpeckleRawConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ToSpeckle\Raw\GridSurfaceToSpeckleMeshRawConverter.cs" />

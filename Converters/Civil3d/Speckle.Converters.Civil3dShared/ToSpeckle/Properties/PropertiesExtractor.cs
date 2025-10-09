@@ -7,6 +7,7 @@ public class PropertiesExtractor : Speckle.Converters.AutocadShared.ToSpeckle.IP
 {
   private readonly ClassPropertiesExtractor _classPropertiesExtractor;
   private readonly PartDataExtractor _partDataExtractor;
+  private readonly ObjectTypeExtractor _objectTypeExtractor;
   private readonly PropertySetExtractor _propertySetExtractor;
   private readonly ExtensionDictionaryExtractor _extensionDictionaryExtractor;
 
@@ -14,12 +15,14 @@ public class PropertiesExtractor : Speckle.Converters.AutocadShared.ToSpeckle.IP
     ClassPropertiesExtractor classPropertiesExtractor,
     PartDataExtractor partDataExtractor,
     PropertySetExtractor propertySetExtractor,
+    ObjectTypeExtractor objectTypeExtractor,
     ExtensionDictionaryExtractor extensionDictionaryExtractor
   )
   {
     _classPropertiesExtractor = classPropertiesExtractor;
     _partDataExtractor = partDataExtractor;
     _propertySetExtractor = propertySetExtractor;
+    _objectTypeExtractor = objectTypeExtractor;
     _extensionDictionaryExtractor = extensionDictionaryExtractor;
   }
 
@@ -31,6 +34,7 @@ public class PropertiesExtractor : Speckle.Converters.AutocadShared.ToSpeckle.IP
     // add part data, property sets, and extension dictionaries to the properties dict
     AddDictionaryToPropertyDictionary(_partDataExtractor.GetPartData(entity), "Part Data", properties);
     AddDictionaryToPropertyDictionary(_propertySetExtractor.GetPropertySets(entity), "Property Sets", properties);
+    AddDictionaryToPropertyDictionary(_objectTypeExtractor.GetObjectType(entity), "C3D Object Type", properties);
     AddDictionaryToPropertyDictionary(
       _extensionDictionaryExtractor.GetExtensionDictionary(entity),
       "Extension Dictionary",
