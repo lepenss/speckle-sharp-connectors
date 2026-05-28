@@ -85,6 +85,11 @@ public class DataObjectConverter : IToHostTopLevelConverter, ITypedConverter<Dat
       result.AddRange(ConvertDisplayObject(item));
     }
 
+    if (target.displayValue.Count == 1 && result.Count == 1)
+    {
+      return new List<(ADB.Entity a, Base b)> { (result[0].a, target) };
+    }
+
     return result;
   }
 
